@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./starter-code/screenshot.jpg)
+![](./screenshot.jpg)
 
 ### Links
 
