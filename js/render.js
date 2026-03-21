@@ -1,4 +1,7 @@
 let index = 0;
+let destController = null;
+let crewController = null;
+let techController = null;
 
 export function renderPage(route, data, sub) {
   if (route === "destination") {
@@ -17,6 +20,10 @@ function renderTechnology(technology, activeName) {
   ) || technology[0];
 
   index = technology.indexOf(active);
+
+  if (techController) techController.abort();
+  techController = new AbortController();
+  const { signal: techSignal } = techController;
 
   const nav = document.querySelector(".tech__slider-nav");
 
@@ -68,7 +75,7 @@ function renderTechnology(technology, activeName) {
     buttons[index].setAttribute("aria-pressed", "true");
     buttons[index].focus();
     updateTechContent(technology[index]);
-  });
+  }, { signal: techSignal });
   updateTechContent(active);
 }
 
@@ -80,6 +87,10 @@ function renderCrew(crew, activeName) {
   ) || crew[0];
 
   index = crew.indexOf(active);
+
+  if (crewController) crewController.abort();
+  crewController = new AbortController();
+  const { signal: crewSignal } = crewController;
 
   const nav = document.querySelector(".crew__btn-container");
 
@@ -131,7 +142,7 @@ function renderCrew(crew, activeName) {
     buttons[index].setAttribute("aria-pressed", "true");
     buttons[index].focus();
     updateCrewContent(crew[index]);
-  });
+  }, { signal: crewSignal });
 
   updateCrewContent(active);
 }
@@ -144,6 +155,10 @@ function renderDestination(destinations, activeName) {
   ) || destinations[0];
 
   index = destinations.indexOf(active);
+
+  if (destController) destController.abort();
+  destController = new AbortController();
+  const { signal: destSignal } = destController;
 
   const nav = document.querySelector(".destinations__nav");
 
@@ -206,7 +221,7 @@ function renderDestination(destinations, activeName) {
       indicator.style.opacity = "0";
       indicatorVisible = false;
     }, 1500);
-  });
+  }, { signal: destSignal });
 
   nav.addEventListener("keydown", (event) => {
     if (event.key === "ArrowLeft") {
@@ -224,7 +239,7 @@ function renderDestination(destinations, activeName) {
     const activeDestination = destinations[index];
     window.location.hash = `destination/${activeDestination.name.toLowerCase().replaceAll(" ", "-")}`;
     updateDestinationContent(activeDestination);
-  });
+  }, { signal: destSignal });
 
   updateDestinationContent(active);
 }
