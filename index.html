@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <script type="module" src="/starter-code/js/main.js"></script>
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+  <header>
+    <div class="header-wrapper">
+      <div class="logo">
+        <a href="#"><img src="./assets/shared/logo.svg" alt=""></a>
+      </div>
+      <div class="header-line" aria-hidden="true"></div>
+      <nav>
+        <button class="nav__toggle blue" aria-label="Open navigation" aria-expanded="false">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+
+        <div class="nav__drawer hidden">
+          <ul class="nav__menu">
+            <li><a href="#home" class="tp-8 nav__link" data-route="home"><span class="bold">00</span>HOME</a></li>
+            <li><a href="#destination" class="tp-8 nav__link" data-route="destination"><span class="bold">01</span>DESTINATION</a></li>
+            <li><a href="#crew" class="tp-8 nav__link" data-route="crew"><span class="bold">02</span>CREW</a></li>
+            <li><a href="#technology" class="tp-8 nav__link" data-route="technology"><span class="bold">03</span>TECHNOLOGY</a></li>
+          </ul>
+          <div class="nav__indicator" aria-hidden="true"></div>
+        </div>
+      </nav> 
+    </div>
+  </header>
+  <main>
+    <section id="home" class="landingpage container">
+      <div class="hero">
+        <div class="hero__content">
+          <p class="tp-6 blue-300">SO, YOU WANT TO TRAVEL TO</p>
+          <h1 class="tp-1">SPACE</h1>
+          <p class="tp-9 blue-300">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
+        </div>
+        <div class="hero__btn-container">
+          <button class="tp-4 hero__btn">EXPLORE</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="destination" class="destinations container">
+      <p class="destinations__heading eyebrow"><span class="bold">01</span>PICK YOUR DESTINATION</p>
+      <div class="destinations__grid">
+              <div class="destinations__image-container">
+        <img src="./assets/destination/image-moon.png" alt="">
+      </div>
+      <div class="destinations__content-container">
+        <div class="destination__links">
+          <ul class="destinations__nav"></ul>
+        </div>
+        <div class="destination__content">
+          <h2 class="tp-2"></h2>
+          <p class="destination__content-text tp-9 blue-300"></p>
+        </div>
+        <div class="spacer"></div>
+        <div class="destination__stats">
+          <div class="destination__stat">
+            <p class="tp-7 blue-300">AVG. DISTANCE</p>
+            <p class="tp-6"></p>
+          </div>
+          <div class="destination__stat">
+            <p class="tp-7 blue-300">EST. TRAVEL TIME</p>
+            <p class="tp-6"></p>
+          </div>
+        </div>
+      </div>  
+      </div>        
+
+    </section>
+
+    <section id="crew" class="crew container">
+      <p class="crew__heading tp-6"><span class="bold eyebrow">02</span>MEET YOUR CREW</p>
+      <div class="crew__member">
+        <div class="crew__content">
+          <div class="crew__info">
+            <p class="tp-4 crew__title">Commander</p>
+            <h2 class="tp-3 crew__name">Douglas Hurley</h2>
+            <p class="tp-9 blue-300 crew__bio">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
+          </div>
+          <div class="crew__btn-container">
+          </div>
+            
+        </div>
+        <div class="crew__image">
+          <div class="crew__image-frame">
+            <img src="./assets/crew/image-douglas-hurley.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology" class="technology">
+      <div class="tech__grid">
+        <div class="tech__header">
+          <p class="eyebrow"><span class="bold">03</span>SPACE LAUNCH 101</p>
+        </div>
+        <div class="tech__image">
+          <img src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="">
+        </div>
+        <div class="tech__slider">
+          <div class="tech__slider-nav tp-4">
+            <button class="tech__slider-btn is-active">1</button>
+            <button class="tech__slider-btn">2</button>
+            <button class="tech__slider-btn">3</button>
+          </div>
+        </div>
+        <div class="tech__content">
+          <p class="tech__content-frontTitle tp-4">THE TERMINOLOGY…</p>
+          <h2 class="tp-3 tech__content-title">LAUNCH VEHICLE</h2>
+          <p class="tp-9 blue-300 tech__content-text">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
