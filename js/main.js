@@ -35,10 +35,10 @@ document.addEventListener("keydown", escKeyCloseNav);
 
 // Functions
 export function closeNav() {
-  burger.classList.remove("nav-open");
-  navDrawer.classList.add("hidden");
-  burger.setAttribute("aria-expanded", "false");
-  navDrawer.setAttribute("aria-hidden", "true");
+  burger?.classList.remove("nav-open");
+  navDrawer?.classList.add("hidden");
+  burger?.setAttribute("aria-expanded", "false");
+  navDrawer?.setAttribute("aria-hidden", "true");
 }
 
 function escKeyCloseNav(event) {
