@@ -876,6 +876,7 @@ nav {
   object-fit: contain;
   object-position: bottom center;
 
+  -webkit-mask-image: linear-gradient(#000 77%,#0000);
   mask-image: linear-gradient(#000 77%,#0000);
 }
 

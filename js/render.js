@@ -245,7 +245,9 @@ function renderDestination(destinations, activeName) {
 }
 
 function updateDestinationContent(dest) {
-  document.querySelector(".destinations__image-container img").src = dest.images.png;
+  const img = document.querySelector(".destinations__image-container img");
+  img.src = dest.images.png;
+  img.alt = dest.name;
   document.querySelector(".destination__content h2").textContent = dest.name.toUpperCase();
   document.querySelector(".destination__content .tp-9").textContent = dest.description;
 
@@ -263,7 +265,9 @@ function positionDestIndicator(indicator, link, nav) {
 }
 
 function updateCrewContent(member) {
-  document.querySelector(".crew__image img").src = member.images.png
+  const img = document.querySelector(".crew__image img");
+  img.src = member.images.png;
+  img.alt = member.name;
   document.querySelector(".crew__name").textContent = member.name
   document.querySelector(".crew__bio").textContent = member.bio
   document.querySelector(".crew__title").textContent = member.role.toUpperCase()
@@ -271,11 +275,9 @@ function updateCrewContent(member) {
 
 
 function updateTechContent(tech) {
-  if (window.innerWidth >= 1100) {
-    document.querySelector(".tech__image img").src = tech.images.portrait;
-  } else {
-    document.querySelector(".tech__image img").src = tech.images.landscape;
-  }
+  const img = document.querySelector(".tech__image img");
+  img.src = window.innerWidth >= 1100 ? tech.images.portrait : tech.images.landscape;
+  img.alt = tech.name;
   document.querySelector(".tech__content-title").textContent = tech.name;
   document.querySelector(".tech__content-text").textContent = tech.description;
 
