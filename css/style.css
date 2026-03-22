@@ -387,6 +387,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 main {
@@ -1212,7 +1213,7 @@ nav {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
 
-    padding-top: 289px;
+    padding-top: 25dvh;
   }
 
   .hero__content {

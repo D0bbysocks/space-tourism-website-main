@@ -51,6 +51,7 @@ export function initRouter(data) {
       renderPage(route, data);
       window.location.hash = route;
       closeNav();
+      window.scrollTo({ top: 0, behavior: "instant" });
     });
   });
 
