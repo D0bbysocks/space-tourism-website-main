@@ -74,24 +74,23 @@ function positionIndicator(indicator, link) {
 }
 
 function showSection(route) {
-  document.body.className = route;
+  document.body.className = `page-${route}`;
 
   document.querySelectorAll(".nav__link").forEach((link) => {
     link.classList.toggle("is-active", link.dataset.route === route);
   });
 
   const sections = document.querySelectorAll("main section");
-  
+
   sections.forEach((section) => {
     section.classList.add("hidden");
+    section.setAttribute("aria-hidden", "true");
   });
 
-
-  const activeSection = document.querySelector(`#${route}`);
+  const activeSection = document.querySelector(`#${route}`) ?? sections[0];
   if (activeSection) {
     activeSection.classList.remove("hidden");
-  } else {
-    sections[0]?.classList.remove("hidden");
+    activeSection.setAttribute("aria-hidden", "false");
   }
 }
 

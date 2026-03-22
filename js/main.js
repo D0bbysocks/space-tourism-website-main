@@ -21,7 +21,13 @@ burger?.addEventListener("click", () => {
   navDrawer.classList.toggle("hidden");
 
   const isExpanded = burger.getAttribute("aria-expanded") === "true";
-  burger.setAttribute("aria-expanded", !isExpanded);
+  const nowOpen = !isExpanded;
+  burger.setAttribute("aria-expanded", nowOpen);
+  navDrawer.setAttribute("aria-hidden", !nowOpen);
+
+  if (nowOpen) {
+    navDrawer.querySelector("a")?.focus();
+  }
 });
 
 document.addEventListener("keydown", escKeyCloseNav);
@@ -32,6 +38,7 @@ export function closeNav() {
   burger.classList.remove("nav-open");
   navDrawer.classList.add("hidden");
   burger.setAttribute("aria-expanded", "false");
+  navDrawer.setAttribute("aria-hidden", "true");
 }
 
 function escKeyCloseNav(event) {

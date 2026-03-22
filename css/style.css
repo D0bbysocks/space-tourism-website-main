@@ -94,6 +94,10 @@
   --bp-md: 48rem; /* 768px */
   --bp-lg: 64rem; /* 1024px */
   --bp-xl: 80rem; /* 1280px */
+
+  /* ---------- SECTION PADDING ---------- */
+  /* 24px @ 375px → 40px @ 725px → max 48px */
+  --section-padding: clamp(24px, 4.57vw + 6.86px, 48px);
 }
 
 
@@ -397,61 +401,61 @@ main {
 
 
 /* --- Home --- */
-body.home {
+body.page-home {
   background-image: url('../assets/home/background-home-mobile.jpg');
 }
 @media (min-width: 650px) {
-  body.home {
+  body.page-home {
     background-image: url('../assets/home/background-home-tablet.jpg');
   }
 }
 @media (min-width: 1100px) {
-  body.home {
+  body.page-home {
     background-image: url('../assets/home/background-home-desktop.jpg');
   }
 }
 
 /* --- Destination --- */
-body.destination {
+body.page-destination {
   background-image: url("../assets/destination/background-destination-mobile.jpg");
 }
 @media (min-width: 650px) {
-  body.destination {
+  body.page-destination {
     background-image: url("../assets/destination/background-destination-tablet.jpg");
   }
 }
 @media (min-width: 1100px) {
-  body.destination {
+  body.page-destination {
     background-image: url("../assets/destination/background-destination-desktop.jpg");
   }
 }
 
 /* --- Crew --- */
-body.crew {
+body.page-crew {
   background-image: url("../assets/crew/background-crew-mobile.jpg");
 }
 @media (min-width: 650px) {
-  body.crew {
+  body.page-crew {
     background-image: url("../assets/crew/background-crew-tablet.jpg");
   }
 }
 @media (min-width: 1100px) {
-  body.crew {
+  body.page-crew {
     background-image: url("../assets/crew/background-crew-desktop.jpg");
   }
 }
 
 /* --- Technology --- */
-body.technology {
+body.page-technology {
   background-image: url("../assets/technology/background-technology-mobile.jpg");
 }
 @media (min-width: 650px) {
-  body.technology {
+  body.page-technology {
     background-image: url("../assets/technology/background-technology-tablet.jpg");
   }
 }
 @media (min-width: 1100px) {
-  body.technology {
+  body.page-technology {
     background-image: url("../assets/technology/background-technology-desktop.jpg");
   }
 }
@@ -646,7 +650,7 @@ nav {
    Destination
    ========================================= */
 .destinations {
-  padding-block: var(--space-24);
+  padding-block: var(--section-padding);
 }
 
 .destinations__heading {
@@ -767,12 +771,12 @@ nav {
    Crew
    ========================================= */
 
-.crew {
+#crew {
   display: grid;
   grid-template-rows: auto auto 1fr;
   grid-template-columns: 1fr;
   
-  padding-top: var(--space-24);
+  padding-block: var(--section-padding);
 }
 
 .crew__heading {
@@ -901,8 +905,7 @@ nav {
   min-height: 100%;
   overflow: hidden;
 
-  padding-top: var(--space-24);
-  padding-bottom: var(--space-48);
+  padding-block: var(--section-padding);
 }
 
 .tech__grid > * {
@@ -1025,9 +1028,6 @@ nav {
     width: min(100% - 5rem, 69.375rem);
   }
 
-  .crew {
-    padding-top: 0;
-  }
 
   .header-wrapper {
     margin: 0;
@@ -1110,9 +1110,6 @@ nav {
 
   /* Destinations */
 
-  .destinations {
-    padding-block: var(--space-40);
-  }
   
   .destinations__heading {
     text-align: left;
